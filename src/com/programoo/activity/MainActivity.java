@@ -9,6 +9,7 @@ import java.util.TimerTask;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,8 +18,10 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -63,6 +66,9 @@ public class MainActivity extends Activity implements OnClickListener,
 
 	final Handler handler = new Handler();
 	private Timer timer;
+	private boolean isAsyncLoadFinish = false;
+	private ArrayAdapter<String> dropDownAdapter;
+	private AutoCompleteTextView autoTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +79,7 @@ public class MainActivity extends Activity implements OnClickListener,
 		mCtx = this;
 
 		// initialize text to speech
+		initialAutoCompleteTextView();
 		initializeTextToSpeech();
 
 		edtSearch = (EditText) findViewById(R.id.edtSearchWord);
@@ -121,24 +128,27 @@ public class MainActivity extends Activity implements OnClickListener,
 		List<String> eentryList = Global.getInstance(this).getMdb().getEentry();
 
 		// In the onCreate method
-		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.edtSearchWord);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+		autoTextView = (AutoCompleteTextView) findViewById(R.id.edtSearchWord);
+		autoTextView.setThreshold(1);
+		
+		dropDownAdapter = new ArrayAdapter<String>(this,
 				android.R.layout.simple_dropdown_item_1line, eentryList);
-		textView.setAdapter(adapter);
-
-		textView.setOnItemClickListener(new OnItemClickListener() {
+		autoTextView.setAdapter(dropDownAdapter);
+		
+		autoTextView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View arg1, int pos,
 					long id) {
 				String keyword = (String) ((AdapterView<ListAdapter>) parent)
 						.getItemAtPosition(pos);
+				hideSoftKeyboard();
 				queryAndShow(keyword);
 				searchRelateImage(keyword);
 			}
 		});
 
-		textView.addTextChangedListener(new TextWatcher() {
+		autoTextView.addTextChangedListener(new TextWatcher() {
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
@@ -227,6 +237,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	}
 
 	public void jsonCallback(String url, JSONObject json, AjaxStatus status) {
+
 		if (json != null) {
 			SearchImageOut sIo = Global.getInstance(this).getgSon()
 					.fromJson(json.toString(), SearchImageOut.class);
@@ -347,7 +358,21 @@ public class MainActivity extends Activity implements OnClickListener,
 
 	@Override
 	public void onInit(int status) {
-		Toast.makeText(this, "Speach status: " + status, Toast.LENGTH_LONG)
-				.show();
+		// initial TTS complete
+	}
+
+	public void hideSoftKeyboard() {
+
+		InputMethodManager inputManager = (InputMethodManager) this
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
+
+		// check if no view has focus:
+		View view = this.getCurrentFocus();
+		if (view == null)
+			return;
+
+		inputManager.hideSoftInputFromWindow(view.getWindowToken(),
+				InputMethodManager.HIDE_NOT_ALWAYS);
+
 	}
 }

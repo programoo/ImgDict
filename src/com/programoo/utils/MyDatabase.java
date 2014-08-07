@@ -8,8 +8,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
-import com.programoo.models.Customer;
 import com.programoo.models.Word;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
@@ -112,6 +113,36 @@ public class MyDatabase extends SQLiteAssetHelper {
 		// Log.d("getAllBooks()", books.toString());
 		return eentry;
 	}
+	
+	public ArrayList<String> searchNearByStartWith(String keyword,int maxHintLength) {
+		ArrayList<String> eentry = new ArrayList<String>();
+
+		// 1. build the query
+		// String query = "SELECT  * FROM " + TABLES_ENG2THAI;
+		String query = "SELECT DISTINCT eentry,tentry FROM eng2thai where eentry like '"+keyword+"%' or tentry like '"+keyword+"%';";
+
+		// 2. get reference to writable DB
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(query, null);
+
+		// 3. go over each row, build book and add it to list
+		int counter=0;
+		if (cursor.moveToFirst()) {
+			do {
+				eentry.add(cursor.getString(0)+" "+cursor.getString(1));
+				counter++;
+				
+				if(counter > maxHintLength)
+				{
+					break;
+				}
+				
+			} while (cursor.moveToNext());
+		}
+
+		// Log.d("getAllBooks()", books.toString());
+		return eentry;
+	}
 
 	public List<Word> searchByExactKeyword(String keyword) {
 		List<Word> books = new LinkedList<Word>();
@@ -151,5 +182,5 @@ public class MyDatabase extends SQLiteAssetHelper {
 
 		return books;
 	}
-
+	
 }
