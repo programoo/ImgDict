@@ -1,14 +1,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent" >
 
     <com.programoo.components.SquareImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:scaleType="centerCrop"
-        android:layout_margin="10dp" 
         android:src="@null" />
 
     <TextView

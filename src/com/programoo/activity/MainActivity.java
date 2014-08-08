@@ -18,11 +18,10 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.inputmethod.InputMethodManager;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -39,6 +38,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.programoo.adapters.StaggeredAdapter;
+import com.programoo.imgdict.ActivitySplashScreen;
 import com.programoo.imgdict.R;
 import com.programoo.models.Result;
 import com.programoo.models.SearchImageOut;
@@ -77,7 +77,6 @@ public class MainActivity extends Activity implements OnClickListener,
 		setContentView(R.layout.activity_main);
 
 		mCtx = this;
-
 		// initialize text to speech
 		initialAutoCompleteTextView();
 		initializeTextToSpeech();
@@ -114,6 +113,7 @@ public class MainActivity extends Activity implements OnClickListener,
 		});
 
 		initialAdvertise();
+		
 	}
 
 	@Override

@@ -4,8 +4,8 @@
     <string name="app_name">ImgDict</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
     <string name="translation_of">คำแปลของ</string>
-	<string name="translation_fail">ไม่พบคำที่คุณต้องการค้นหา</string>
-    
+    <string name="translation_fail">ไม่พบคำที่คุณต้องการค้นหา</string>
+    <string name="title_activity_activity_splash_screen">ImgDict</string>
+
 </resources>

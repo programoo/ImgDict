@@ -60,7 +60,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="0.2"
                 android:background="@drawable/round_btn_blue3"
-                android:text="EN-TH"
+                android:text="Speak"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
         </LinearLayout>

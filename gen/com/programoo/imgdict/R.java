@@ -1477,13 +1477,15 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f020071;
         public static final int ic_plusone_standard_off_client=0x7f020072;
         public static final int ic_plusone_tall_off_client=0x7f020073;
-        public static final int powered_by_google_dark=0x7f020074;
-        public static final int powered_by_google_light=0x7f020075;
-        public static final int round_btn_blue1=0x7f020076;
-        public static final int round_btn_blue2=0x7f020077;
-        public static final int round_btn_blue3=0x7f020078;
-        public static final int round_btn_blue4=0x7f020079;
-        public static final int rounded_image_view=0x7f02007a;
+        public static final int imgdict_icon=0x7f020074;
+        public static final int playstore_icon=0x7f020075;
+        public static final int powered_by_google_dark=0x7f020076;
+        public static final int powered_by_google_light=0x7f020077;
+        public static final int round_btn_blue1=0x7f020078;
+        public static final int round_btn_blue2=0x7f020079;
+        public static final int round_btn_blue3=0x7f02007a;
+        public static final int round_btn_blue4=0x7f02007b;
+        public static final int rounded_image_view=0x7f02007c;
     }
     public static final class id {
         public static final int action_bar=0x7f05002e;
@@ -1497,7 +1499,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050036;
-        public static final int action_settings=0x7f05005a;
+        public static final int action_settings=0x7f05005b;
         public static final int activity_chooser_view_content=0x7f050037;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1526,7 +1528,7 @@ containing a value of this type.
         public static final int icon=0x7f05003c;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050039;
-        public static final int imageView1=0x7f050058;
+        public static final int imageView1=0x7f050059;
         public static final int imgBtnSearch=0x7f050050;
         public static final int imgBtnSpeak=0x7f050051;
         public static final int listMode=0x7f050001;
@@ -1569,10 +1571,11 @@ containing a value of this type.
         public static final int title=0x7f05003d;
         public static final int top_action_bar=0x7f050032;
         public static final int tvDescMajor=0x7f050054;
-        public static final int tvImageTitle=0x7f050059;
+        public static final int tvImageTitle=0x7f05005a;
         public static final int tvOppo=0x7f050056;
         public static final int tvSearchSummary=0x7f050053;
         public static final int tvSyn=0x7f050055;
+        public static final int tvTitle=0x7f050058;
         public static final int up=0x7f050033;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1630,11 +1633,13 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_main=0x7f030018;
-        public static final int row_staggered_demo=0x7f030019;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
+        public static final int activity_splash_screen=0x7f030019;
+        public static final int row_staggered_demo=0x7f03001a;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
     }
     public static final class menu {
-        public static final int main=0x7f0c0000;
+        public static final int activity_splash_screen=0x7f0c0000;
+        public static final int main=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1769,6 +1774,7 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f0a0025;
         public static final int hello_world=0x7f0a0028;
+        public static final int title_activity_activity_splash_screen=0x7f0a002c;
         public static final int translation_fail=0x7f0a002b;
         public static final int translation_of=0x7f0a002a;
         /**  Text on a placeholder buy button when Google Play services is not
@@ -1778,15 +1784,6 @@ containing a value of this type.
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -1799,8 +1796,7 @@ containing a value of this type.
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b0090;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
+        /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b0091;
         /**  Mimic text appearance in select_dialog_item.xml 
