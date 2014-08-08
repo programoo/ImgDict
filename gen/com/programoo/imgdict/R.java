@@ -1499,8 +1499,9 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050036;
-        public static final int action_settings=0x7f05005b;
+        public static final int action_settings=0x7f05005c;
         public static final int activity_chooser_view_content=0x7f050037;
+        public static final int adView=0x7f050058;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
         public static final int book_now=0x7f050028;
@@ -1528,7 +1529,7 @@ containing a value of this type.
         public static final int icon=0x7f05003c;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050039;
-        public static final int imageView1=0x7f050059;
+        public static final int imageView1=0x7f05005a;
         public static final int imgBtnSearch=0x7f050050;
         public static final int imgBtnSpeak=0x7f050051;
         public static final int listMode=0x7f050001;
@@ -1571,11 +1572,11 @@ containing a value of this type.
         public static final int title=0x7f05003d;
         public static final int top_action_bar=0x7f050032;
         public static final int tvDescMajor=0x7f050054;
-        public static final int tvImageTitle=0x7f05005a;
+        public static final int tvImageTitle=0x7f05005b;
         public static final int tvOppo=0x7f050056;
         public static final int tvSearchSummary=0x7f050053;
         public static final int tvSyn=0x7f050055;
-        public static final int tvTitle=0x7f050058;
+        public static final int tvTitle=0x7f050059;
         public static final int up=0x7f050033;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1683,6 +1684,7 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_settings=0x7f0a0029;
+        public static final int add_banner_unit_id=0x7f0a002d;
         public static final int app_name=0x7f0a0027;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they

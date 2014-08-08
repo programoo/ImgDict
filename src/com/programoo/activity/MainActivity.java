@@ -36,9 +36,10 @@ import android.widget.Toast;
 import com.androidquery.callback.AjaxStatus;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.programoo.adapters.StaggeredAdapter;
-import com.programoo.imgdict.ActivitySplashScreen;
+import com.programoo.components.ToastAdListener;
 import com.programoo.imgdict.R;
 import com.programoo.models.Result;
 import com.programoo.models.SearchImageOut;
@@ -69,6 +70,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	private boolean isAsyncLoadFinish = false;
 	private ArrayAdapter<String> dropDownAdapter;
 	private AutoCompleteTextView autoTextView;
+	private AdView mAdView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +115,9 @@ public class MainActivity extends Activity implements OnClickListener,
 		});
 
 		initialAdvertise();
+        mAdView = (AdView) findViewById(R.id.adView);
+        mAdView.setAdListener(new ToastAdListener(this));
+        mAdView.loadAd(new AdRequest.Builder().build());
 		
 	}
 
@@ -193,6 +198,7 @@ public class MainActivity extends Activity implements OnClickListener,
 				});
 			}
 		};
+		
 		timer = new Timer();
 		timer.schedule(timertask, 20 * 1000, 10 * 60 * 1000);
 		/* ------------ End Interstitial --------------- */

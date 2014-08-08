@@ -7,5 +7,6 @@
     <string name="translation_of">คำแปลของ</string>
     <string name="translation_fail">ไม่พบคำที่คุณต้องการค้นหา</string>
     <string name="title_activity_activity_splash_screen">ImgDict</string>
+    <string name="add_banner_unit_id">ca-app-pub-3516350933158110/4451121581</string>
 
 </resources>
