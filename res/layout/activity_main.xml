@@ -115,15 +115,6 @@
             android:numColumns="2"
             android:stretchMode="columnWidth"
             android:verticalSpacing="0dp" />
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/add_banner_unit_id" />
     </LinearLayout>
 
 </ScrollView>

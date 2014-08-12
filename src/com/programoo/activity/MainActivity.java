@@ -115,10 +115,6 @@ public class MainActivity extends Activity implements OnClickListener,
 		});
 
 		initialAdvertise();
-        mAdView = (AdView) findViewById(R.id.adView);
-        mAdView.setAdListener(new ToastAdListener(this));
-        mAdView.loadAd(new AdRequest.Builder().build());
-		
 	}
 
 	@Override
@@ -199,8 +195,12 @@ public class MainActivity extends Activity implements OnClickListener,
 			}
 		};
 		
+		
+		
 		timer = new Timer();
-		timer.schedule(timertask, 20 * 1000, 10 * 60 * 1000);
+//		timer.schedule(timertask, 20 * 1000, 10 * 60 * 1000);
+		timer.schedule(timertask, 60 * 1000);
+		
 		/* ------------ End Interstitial --------------- */
 	}
 
